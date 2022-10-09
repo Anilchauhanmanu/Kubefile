@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-app
+spec:
+  selector:
+    matchLabels:
+      app: configapp
+      department: sales
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: configapp
+        department: sales
+    spec:
+      containers:
+      - name: configapp
+        image: "docker.io/anilchauhanmanu/limitconfigserver:v1"
+       
+          
+          

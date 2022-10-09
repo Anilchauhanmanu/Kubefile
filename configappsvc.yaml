@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-config-service
+spec:
+  
+  selector:
+    app: configapp
+    department: sales
+  ports:
+  - protocol: TCP
+    port: 199
+    targetPort: 8080
