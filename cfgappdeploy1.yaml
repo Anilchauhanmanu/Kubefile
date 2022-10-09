@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-app09oct
+spec:
+  selector:
+    matchLabels:
+      app: cfgserver
+      department: sabbv2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cfgserver
+        department: sabbv2
+    spec:
+      containers:
+      - name: configapp1
+        image: "docker.io/library/cloudserver1:v1"
+      env
+        spri: spring.cloud.config.server.git.uri
+	 value: localhost
+       
+
+       
+          
+          
